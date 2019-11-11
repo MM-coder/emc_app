@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="offcanvas-nav-primary" uk-offcanvas="overlay: true">
+                <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+            
+                    <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-horizontal">
+                        <h2>Menu</h1>
+                        <li><a href="/"><span class="uk-margin-small-right" uk-icon="icon: home"></span> Home</a></li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: grid"></span> Classes</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: info"></span> Info</a></li>
+                    </ul>
+            
+                </div>
+            </div>
+        </div>
+    <nav class="uk-navbar-container" uk-navbar>
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav">
+                    <li><a href="#offcanvas-nav-primary" uk-toggle><span uk-icon="icon: menu"></span> Menu</a></li>
+                </ul>        
+            </div>
+    </nav>
+    <div class="uk-animation-toggle" tabindex="0">
+        <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+                <h3 class="uk-card-title">Next Class</h3>
+                <p>The next class is {{ next_class['name'].title() }} at {{ readable_time }}
+                </p>
+        </div>
+    </div>
+    <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+            <h3 class="uk-card-title">Next Project Due</h3>
+            <p>The next project due is {{ next_homework['name'].title() }} for {{ next_homework['subject'] }} and consists of {{ next_homework['description'] }} and is due by {{ homework_time }} of {{ next_homework['deliver_date'] }}
+            </p>
+        </div>
+</body>
+</html>
