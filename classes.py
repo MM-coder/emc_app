@@ -21,3 +21,7 @@ def create_readable_class(data: dict):
     else:
         return {"name": data['name'], "day": data['day'], "start": data['start'], "finish": data['finish']}
     return {"name": usename, "day": data['day'], "start": data['start'], "finish": data['finish']}
+
+def create_readable_class_list(data: list):
+    for i in data:
+        pass
