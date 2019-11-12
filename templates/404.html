@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>404 - Page not found</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='404.css') }}">
+        <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="shortcut icon" href="https://itsmmgamer.tk/favicon.ico" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="maindiv">
+            <div id="typed-strings">
+                <p><strong><mark>WARN:</mark></strong>^1000 the resource "{{ path }}" wasn't found on this server. ^2000 Lost? <a href="/">go home</a></p>
+            </div>
+            <span id="typed"></span>
+            <script>
+                $('document').ready(function(){
+                        var typed = new Typed('#typed',{
+                        stringsElement: '#typed-strings',
+                        backSpeed: 30,
+                        typeSpeed: 40,
+                        smartBackspace: true,
+                        loop: false,
+                    });
+                });
+            </script>
+        </div>
+        <div class="footer">
+            <div class="footer-text"><i class="fas fa-server"></i> Server: AWS-PWA-9B | <i class="fas fa-bug"></i> Report a <a href="mailto:info@itsmmgamer.tk">bug</a>
+        </div>
+    </body>
+</html>

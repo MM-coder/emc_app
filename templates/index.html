@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="offcanvas-nav-primary" uk-offcanvas="overlay: true">
+        <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+                <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-horizontal">
+                    <h2>Menu</h1>
+                    <li><a href="/"><span class="uk-margin-small-right" uk-icon="icon: home"></span> Home</a></li>
+                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: grid"></span> Classes</a></li>
+                    <li class="uk-nav-divider"></li>
+                    <li><a href="#offcanvas-flip" uk-toggle><span class="uk-margin-small-right" uk-icon="icon: info"></span> Info</a></li>
+                </ul>  
+            </div>
+        </div>
+    </div>
+    <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
+        <div class="uk-offcanvas-bar">
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+            <img data-src="{{ url_for('static', filename='mm.png') }}" width="" height="" alt="" uk-img>
+            <h3>EMC_APP | By Mauro M.</h3>
+            <p>Aplicação que mostra as proximas aulas com </p>
+            <p>This code is protected and released to the public under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) License any faliure to comply with the terms stipulated in the license will be met with swift legal action by the Creator.</p>
+            <h6>Versão: {{ version }}</h6>
+        </div>
+    </div>
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav">
+                <li><a href="#offcanvas-nav-primary" uk-toggle><span uk-icon="icon: menu"></span> Menu</a></li>
+            </ul>        
+        </div>
+    </nav>
+    <div class="uk-animation-toggle" tabindex="0">
+        <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+                <h3 class="uk-card-title">Proxima aula</h3>
+                <p>A proxima aula é {{ next_class['name'].title() }} às {{ readable_time }}
+                </p>
+        </div>
+    </div>
+    <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+            <h3 class="uk-card-title">Proximo projeto</h3>
+            <p>O proximo projeto é {{ next_homework['name'].title() }} para {{ next_homework['subject'] }} e consiste em {{ next_homework['description'] }} e tem de ser entregue até as {{ homework_time }} do dia {{ next_homework['deliver_date'] }}
+            </p>
+    </div>
+</body>
+</html>
