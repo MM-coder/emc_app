@@ -17,6 +17,11 @@ def index():
     next_homework_obj = homework.get_next_task_due()
     return render_template('index.html', next_class = classes.create_readable_class(next_class_obj), readable_time = calculations.return_readable_time(next_class_obj['start']), next_homework = next_homework_obj, homework_time = calculations.return_readable_time(next_homework_obj['deliver_time']), version=version)
 
+@app.route("/aulas")
+def aulas():
+    return render_template('classes.html', segunda = calculations.get_day_timetable('monday'), terca = calculations.get_day_timetable('tuesday'), quarta = calculations.get_day_timetable('wednesday'), quinta = calculations.get_day_timetable('thursday'), sexta = calculations.get_day_timetable('friday'))
+
+
 @app.errorhandler(404)
 def handle_404_error(e):
     return render_template('404.html', path = str(request.path))
