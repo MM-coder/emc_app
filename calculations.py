@@ -31,28 +31,28 @@ def next_weekday(d: datetime.datetime, weekday):
 
 def get_weekday(day: str):
     if day.upper == "monday":
-        return 1
+        return 0
     if day.upper == "tuesday":
-        return 2
+        return 1
     if day.upper == "wednesday":
-        return 3
+        return 2
     if day.upper == "thursday":
-        return 4
+        return 3
     if day.upper == "friday":
-        return 5
+        return 4
     else:
         return 0
 
 def get_weekday_int(day: int):
-    if day == 1:
+    if day == 0:
         return "monday"
-    if day == 2:
+    if day == 1:
         return "tuesday"
-    if day == 3:
+    if day == 2:
         return "wednesday"
-    if day == 4:
+    if day == 3:
         return "thursday"
-    if day == 5:
+    if day == 4:
         return "friday"
     else:
         return 1 # in case of weekend
@@ -94,3 +94,6 @@ def return_readable_time(time):
         else:
             work = str(time).replace('.', ':') + ' PM'
         return work
+
+print(get_closest_class(get_day_timetable(get_weekday_int(datetime.datetime.now().weekday()))))
+print(datetime.datetime.now().weekday() + 1)
