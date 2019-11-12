@@ -68,14 +68,16 @@ def get_day_timetable(day: str):
                 pass
     return day_timetable
 
-def get_closest_class(day: list):
+def get_closest_class():
+    with open('timetable.json', 'r', encoding='utf-8') as f:
+        day = json.load(f)
     formatted_time = float(str(current_hour) + '.' + str(current_min))
-    for x in day:
+    for x in day['subjects']:
         if x['start'] >= formatted_time and get_weekday(str(x['day'])) == datetime.datetime.now().weekday():
             return x
             break
         else:
-            return  {"name": "error", "day": "error", "start": 00, "finish": 00}
+            pass
 
 def return_readable_time(time):
     if type(time) == None:
