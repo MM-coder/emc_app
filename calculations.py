@@ -55,9 +55,9 @@ def get_day_timetable(day: str):
     return day_timetable
 
 def get_closest_class(day: list):
-    formatted_time = float(str(dummy_hour) + '.' + str(dummy_min))
+    formatted_time = float(str(current_hour) + '.' + str(current_min))
     for x in day:
-        if x['start'] >= formatted_time and get_weekday(str(x['day'])) == dummy_object.weekday():
+        if x['start'] >= formatted_time and get_weekday(str(x['day'])) == datetime.datetime.now().weekday():
             return x
             break
         else:
