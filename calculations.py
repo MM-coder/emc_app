@@ -94,6 +94,3 @@ def return_readable_time(time):
         else:
             work = str(time).replace('.', ':') + ' PM'
         return work
-
-print(get_closest_class(get_day_timetable(get_weekday_int(datetime.datetime.now().weekday()))))
-print(datetime.datetime.now().weekday() + 1)
