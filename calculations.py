@@ -75,7 +75,7 @@ def get_closest_class(day: list):
             return x
             break
         else:
-            return get_closest_class(get_day_timetable(get_weekday_int(datetime.datetime.now().weekday() + 1)))
+            return  {"name": "error", "day": "error", "start": 00, "finish": 00}
 
 def return_readable_time(time):
     if type(time) == None:
