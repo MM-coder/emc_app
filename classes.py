@@ -16,7 +16,7 @@ def create_readable_class(data: dict):
         usename = 'Geografia'
     if data['name'] == 'mat':
         usename = 'Matématica'
-    if data['name'].len() == 2 or data['name'].len() == 3:
+    if len(data['name']) == 2 or len(data['name']) == 3:
         usename = data['name'].upper()
     else:
         return {"name": data['name'], "day": data['day'], "start": data['start'], "finish": data['finish']}
