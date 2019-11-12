@@ -52,7 +52,7 @@ def get_day_timetable(day: str):
                 day_timetable.append(x)
             else:
                 pass
-        return day_timetable
+    return day_timetable
 
 def get_closest_class(day: list):
     formatted_time = float(str(dummy_hour) + '.' + str(dummy_min))
