@@ -61,9 +61,11 @@ def get_closest_class(day: list):
             return x
             break
         else:
-            pass
+            return get_closest_class(get_day_timetable(get_weekday(datetime.datetime.now().weekday() + 1)))
 
 def return_readable_time(time):
+    if type(time) == None:
+        return None
     if type(time) == float:
         if time <= 12.00:
             work = str(time).replace('.', ':')
