@@ -11,14 +11,14 @@
 import calculations
 
 def create_readable_subject(data: str):
-    if data['name'] == 'hist':
+    if data == 'hist':
         return "História"
-    if data['name'] == 'geog':
+    if data == 'geog':
         return 'Geografia'
-    if data['name'] == 'mat':
+    if data == 'mat':
         return 'Matématica'
-    if len(data['name']) == 2 or len(data['name']) == 3:
-        return data['name'].upper()
+    if len(data) == 2 or len(data) == 3:
+        return data.upper()
     else:
         return data
 
