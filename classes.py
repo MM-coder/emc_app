@@ -40,6 +40,7 @@ def create_readable_class_list(data: list):
     return_list = []
     for i in data:
         use_subject_name = create_readable_subject(i['name'])
-        use_date = calculations.return_readable_time(i['start'])
-        return_list.append({"name": use_subject_name, "day": i['day'], "start": use_date, "finish": i['finish']})
+        use_start_date = calculations.return_readable_time(i['start'])
+        use_finish_date = calculations.return_readable_time(i['finish'])
+        return_list.append({"name": use_subject_name, "day": i['day'], "start": use_start_date, "finish": use_finish_date})
     return return_list
