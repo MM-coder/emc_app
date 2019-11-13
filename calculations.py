@@ -74,8 +74,7 @@ def get_closest_class(day: list):
         if x['start'] >= formatted_time and get_weekday(str(x['day'])) == datetime.datetime.now().weekday():
             return x
             break
-        else:
-            return  get_day_timetable(get_weekday_int(datetime.datetime.now().weekday() + 1))[0]
+        return get_day_timetable(get_weekday_int(datetime.datetime.now().weekday() + 1))[0]
 
 def return_readable_time(time):
     if type(time) == None:

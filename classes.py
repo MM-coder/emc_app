@@ -8,6 +8,20 @@
 # Any faliure to comply with the terms stipulated in the license will be met with swift legal action 
 # by the Creator.
 
+import calculations
+
+def create_readable_subject(data: str):
+    if data['name'] == 'hist':
+        return "História"
+    if data['name'] == 'geog':
+        return 'Geografia'
+    if data['name'] == 'mat':
+        return 'Matématica'
+    if len(data['name']) == 2 or len(data['name']) == 3:
+        return data['name'].upper()
+    else:
+        return data
+
 def create_readable_class(data: dict):
     usename = ""
     if data['name'] == 'hist':
@@ -23,5 +37,9 @@ def create_readable_class(data: dict):
     return {"name": usename, "day": data['day'], "start": data['start'], "finish": data['finish']}
 
 def create_readable_class_list(data: list):
+    return_list = []
     for i in data:
-        pass
+        use_subject_name = create_readable_subject(i['name'])
+        use_date = calculations.return_readable_time(i['start'])
+        return_list.append({"name": use_subject_name, "day": i['day'], "start": use_date, "finish": i['finish']})
+    return return_list

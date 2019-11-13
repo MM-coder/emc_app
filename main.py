@@ -19,7 +19,7 @@ def index():
 
 @app.route("/aulas")
 def aulas():
-    return render_template('classes.html', segunda = calculations.get_day_timetable('monday'), terca = calculations.get_day_timetable('tuesday'), quarta = calculations.get_day_timetable('wednesday'), quinta = calculations.get_day_timetable('thursday'), sexta = calculations.get_day_timetable('friday'))
+    return render_template('classes.html', segunda = classes.create_readable_class_list(calculations.get_day_timetable('monday')), terca = classes.create_readable_class_list(calculations.get_day_timetable('tuesday')), quarta = classes.create_readable_class_list(calculations.get_day_timetable('wedensday')), quinta = classes.create_readable_class_list(calculations.get_day_timetable('thursday')), sexta = classes.create_readable_class_list(calculations.get_day_timetable('friday')))
 
 
 @app.errorhandler(404)
