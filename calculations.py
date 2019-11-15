@@ -55,7 +55,7 @@ def get_weekday_int(day: int):
     if day == 4:
         return "friday"
     else:
-        return 1 # in case of weekend
+        return 0 # in case of weekend
 
 def get_day_timetable(day: str):
     with open('timetable.json', 'r', encoding='utf-8') as f:
