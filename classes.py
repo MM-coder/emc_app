@@ -23,6 +23,7 @@ def create_readable_subject(data: str):
         return data
 
 def create_readable_class(data: dict):
+    print(data)
     usename = ""
     if data['name'] == 'hist':
         usename = "História"
